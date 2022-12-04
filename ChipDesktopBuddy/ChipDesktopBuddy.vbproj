@@ -88,6 +88,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MailDialog.Designer.vb">
+      <DependentUpon>MailDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MailDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -103,6 +109,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SpeedDialog.Designer.vb">
+      <DependentUpon>SpeedDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SpeedDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WarningForm.Designer.vb">
       <DependentUpon>WarningForm.vb</DependentUpon>
     </Compile>
@@ -117,17 +129,24 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MailDialog.resx">
+      <DependentUpon>MailDialog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpeedDialog.resx">
+      <DependentUpon>SpeedDialog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WarningForm.resx">
       <DependentUpon>WarningForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -163,9 +182,6 @@
     <None Include="Resources\a.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cough.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\WARNING.png" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +189,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chipicon.ico" />
+    <None Include="Resources\chip_envelope.png" />
+    <None Include="Resources\cough.wav" />
+    <None Include="Resources\WindowGlass.wav" />
+    <None Include="Resources\chip3_fixedfixed.gif" />
+    <None Include="Resources\chip4_fixedfixed.gif" />
+    <None Include="Resources\chip2_fixed.gif" />
+    <None Include="Resources\Car_pedals_20180814_small.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
