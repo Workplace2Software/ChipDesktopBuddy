@@ -11,5 +11,8 @@
     <Setting Name="AutoStart" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="Version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.2.0.0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

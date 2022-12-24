@@ -36,6 +36,7 @@ Public Class Form1
 
     Public dialogRes1, dialogRes2 As String
 
+#Region "we do a little pinvoke"
     <DllImport("user32.dll")> _
     Public Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
     End Function
@@ -45,6 +46,10 @@ Public Class Form1
     <DllImport("user32.dll", SetLastError:=True)> _
     Private Shared Function SetWindowPos(ByVal hWnd As IntPtr, ByVal hWndInsertAfter As IntPtr, ByVal X As Integer, ByVal Y As Integer, ByVal cx As Integer, ByVal cy As Integer, ByVal uFlags As UInt32) As Boolean
     End Function
+    <DllImport("user32.dll")> _
+    Private Shared Sub keybd_event(ByVal bVk As Byte, ByVal bScan As Byte, ByVal dwFlags As UInteger, ByVal dwExtraInfo As Integer)
+    End Sub
+#End Region
 
     Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
         If e.Button = MouseButtons.Left Then
@@ -89,10 +94,19 @@ Public Class Form1
 
         currentScreen = Screen.AllScreens.First(Function(s) s.Bounds.Contains(Me.Location))
 
+        ' persist settings thru upgrades
+        If New Version(My.Settings.Version) < My.Application.Info.Version Then
+            My.Settings.Upgrade()
+            My.Settings.Version = My.Application.Info.Version.ToString
+            My.Settings.Save()
+        End If
+
         ' act on persistent settings
         AlwaysOnTopOperation()
         RubberBallOperation()
         StartWithMyComputerOperation(True)
+
+        PictureBox2.Visible = (Date.Now.Month = 12)
     End Sub
 
     Private Sub MoreFromWorkplace2SoftwareToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoreFromWorkplace2SoftwareToolStripMenuItem1.Click
@@ -218,5 +232,48 @@ Public Class Form1
             My.Settings.AutoStart = IO.File.Exists(shortcutPath)
         End If
         StartWithMyComputerToolStripMenuItem.Checked = My.Settings.AutoStart
+    End Sub
+
+    Private Sub HideToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HideToolStripMenuItem.Click
+        My.Settings.OnTop = False
+        AlwaysOnTopOperation()
+        My.Settings.Save()
+        ' second time to hide it behind all other windows
+        SetWindowPos(Handle, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE)
+    End Sub
+
+    Private Sub QuietModeF9ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuietModeF9ToolStripMenuItem.Click
+        For i = 0 To 100
+            keybd_event(CByte(Keys.VolumeUp), 0, 0, 0)
+            keybd_event(CByte(Keys.VolumeUp), 0, 2, 0) ' keyup
+        Next
+    End Sub
+
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        Select Case e.KeyCode
+            Case Keys.F9
+                QuietModeF9ToolStripMenuItem.PerformClick()
+        End Select
+    End Sub
+
+    Private Sub TypeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TypeToolStripMenuItem.Click
+        TypeDialog.Show()
+    End Sub
+
+    Private Sub ConquerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConquerToolStripMenuItem.Click
+        Process.Start("https://youtu.be/0iI4ap-QA38")
+    End Sub
+
+    Private Sub SuperDipChipToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SuperDipChipToolStripMenuItem.Click
+        Process.Start("cmd", "/c ""echo Launching game... & cd games\dipchip & start dipchip""")
+        ' Stupid hack if stupid cmd stupidly stays put, stupid!
+        ' Known to happen at least once
+        ' {Alt down}{Space}{Alt up}n
+        keybd_event(12, 0, 0, 0)
+        keybd_event(CByte(Keys.Space), 0, 0, 0)
+        keybd_event(CByte(Keys.Space), 0, 2, 0)
+        keybd_event(12, 0, 2, 0)
+        keybd_event(CByte(Keys.N), 0, 0, 0)
+        keybd_event(CByte(Keys.N), 0, 2, 0)
     End Sub
 End Class
