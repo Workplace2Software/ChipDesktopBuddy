@@ -68,7 +68,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>chipicon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\chipicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -100,11 +100,35 @@
     <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CallForm.Designer.vb">
+      <DependentUpon>CallForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CallForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallHelperForm.Designer.vb">
+      <DependentUpon>CallHelperForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CallHelperForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChipMinutesDialog.Designer.vb">
+      <DependentUpon>ChipMinutesDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChipMinutesDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JokeForm.Designer.vb">
+      <DependentUpon>JokeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="JokeForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MailDialog.Designer.vb">
@@ -128,6 +152,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RegisterNag.Designer.vb">
+      <DependentUpon>RegisterNag.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterNag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\TrackedForm.Designer.vb">
+      <DependentUpon>TrackedForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TrackedForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SpeedDialog.Designer.vb">
       <DependentUpon>SpeedDialog.vb</DependentUpon>
     </Compile>
@@ -146,13 +182,26 @@
     <Compile Include="WarningForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Win32.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CallForm.resx">
+      <DependentUpon>CallForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CallHelperForm.resx">
+      <DependentUpon>CallHelperForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChipMinutesDialog.resx">
+      <DependentUpon>ChipMinutesDialog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JokeForm.resx">
+      <DependentUpon>JokeForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MailDialog.resx">
       <DependentUpon>MailDialog.vb</DependentUpon>
@@ -162,6 +211,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterNag.resx">
+      <DependentUpon>RegisterNag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TrackedForm.resx">
+      <DependentUpon>TrackedForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpeedDialog.resx">
       <DependentUpon>SpeedDialog.vb</DependentUpon>
@@ -217,6 +272,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chipicon.ico" />
+    <None Include="Resources\endcall.PNG" />
+    <None Include="Resources\chip-minutes.png" />
+    <None Include="Resources\phone_call_opt.wav" />
+    <None Include="Resources\phoneguy.jpg" />
+    <None Include="Resources\phone_outbound_cut.wav" />
+    <None Include="Resources\W2SSmall.png" />
+    <None Include="Resources\skypecontrols.PNG" />
+    <None Include="Resources\cry3-micah.wav" />
+    <None Include="Resources\chipicon.ico" />
+    <None Include="Resources\smiley.png" />
+    <None Include="Resources\smiley.bmp" />
+    <None Include="Resources\512px-Stand-up_comedy_-_Stage.jpg" />
+    <None Include="Resources\tracked.png" />
     <None Include="Resources\chipkeyboard.png" />
     <None Include="Resources\chip_envelope.png" />
     <None Include="Resources\cough.wav" />
@@ -227,8 +295,25 @@
     <None Include="Resources\Car_pedals_20180814_small.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="IWshRuntimeLibrary">
       <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>

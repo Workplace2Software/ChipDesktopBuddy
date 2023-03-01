@@ -1,26 +1,23 @@
-﻿Imports System.Runtime.InteropServices
-Imports System.IO
+﻿Imports System.IO
 
 Imports IWshRuntimeLibrary
 
+Imports ChipDesktopBuddy.Win32
+
 Public Class Form1
-#Region "winapi consts"
-    Const WM_NCLBUTTONDOWN = &HA1&
-    Const HT_CAPTION = 2
-
-    Private ReadOnly HWND_BOTTOM As New IntPtr(1)
-    Private ReadOnly HWND_TOPMOST As New IntPtr(-1)
-
-    Const SWP_NOMOVE = 2
-    Const SWP_NOSIZE = 1
-#End Region
     Private ReadOnly shortcutPath =
         Environment.GetFolderPath(Environment.SpecialFolder.Startup) & _
         "\ChipDesktopBuddy.lnk"
 
     Dim r As New Random
 
-    Dim currentScreen As Screen
+    Private currentScreen As Screen
+    Public ReadOnly Property Screen As Screen
+        Get
+            Return currentScreen
+        End Get
+    End Property
+
     Dim angle = 135
 
     Dim chipsfxs() = { _
@@ -36,21 +33,7 @@ Public Class Form1
 
     Public dialogRes1, dialogRes2 As String
 
-#Region "we do a little pinvoke"
-    <DllImport("user32.dll")> _
-    Public Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
-    End Function
-    <DllImport("user32.dll")> _
-    Public Shared Function ReleaseCapture() As Boolean
-    End Function
-    <DllImport("user32.dll", SetLastError:=True)> _
-    Private Shared Function SetWindowPos(ByVal hWnd As IntPtr, ByVal hWndInsertAfter As IntPtr, ByVal X As Integer, ByVal Y As Integer, ByVal cx As Integer, ByVal cy As Integer, ByVal uFlags As UInt32) As Boolean
-    End Function
-    <DllImport("user32.dll")> _
-    Private Shared Sub keybd_event(ByVal bVk As Byte, ByVal bScan As Byte, ByVal dwFlags As UInteger, ByVal dwExtraInfo As Integer)
-    End Sub
-#End Region
-
+#Region "click events"
     Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
         If e.Button = MouseButtons.Left Then
             ' random chance to scream when touched, like real people!
@@ -68,13 +51,18 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub QuitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitToolStripMenuItem1.Click
-        Application.Exit()
+    Private Sub PictureBox1_MouseUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseUp
+        If e.Button = MouseButtons.Left Then
+            ' finished dragging
+            currentScreen = Screen.AllScreens.First(Function(s) s.Bounds.Contains(Me.Location))
+        End If
     End Sub
+#End Region
 
+#Region "crunching corner"
     Private Sub PlayCrunch(ByVal sound As System.IO.UnmanagedMemoryStream)
         ' Cough condition, covid lockdown or flu season
-        If (Date.Now.Month = 3 Or Date.Now.Month = 10) And r.Next() > 0.5 Then
+        If (Date.Now.Month = 3 Or Date.Now.Month = 10) And r.NextDouble() < 0.5 Then
             My.Computer.Audio.Play(My.Resources.cough, AudioPlayMode.Background)
             Exit Sub
         End If
@@ -83,14 +71,25 @@ Public Class Form1
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        Dim soundnum = r.Next(0, chipsfxs.Length) ' .net always starts at 0
-        PlayCrunch(chipsfxs(soundnum))
-        Timer1.Interval = r.Next(10000, 60000)
+        CrunchOperation()
     End Sub
 
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub CrunchOperation()
+        Dim soundnum = r.Next(0, chipsfxs.Length) ' .net always starts at 0
+        PlayCrunch(chipsfxs(soundnum))
+
+        If r.NextDouble() < 0.2 Then
+            TrackedForm.Show()
+        End If
+
+        FlashWindow(Handle, False)
+
         Timer1.Interval = r.Next(10000, 60000)
-        Timer1.Enabled = True
+    End Sub
+#End Region
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Timer1.Enabled = False
 
         currentScreen = Screen.AllScreens.First(Function(s) s.Bounds.Contains(Me.Location))
 
@@ -107,6 +106,26 @@ Public Class Form1
         StartWithMyComputerOperation(True)
 
         PictureBox2.Visible = (Date.Now.Month = 12)
+
+        RegisterNag.ShowDialog()
+        RegisterNag.Dispose()
+
+        Timer1.Interval = r.Next(10000, 60000)
+        Timer1.Enabled = True
+    End Sub
+
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        Select Case e.KeyCode
+            Case Keys.F9
+                QuietModeF9ToolStripMenuItem.PerformClick()
+                'Case Keys.T ' debug
+                '    TrackedForm.Show()
+        End Select
+    End Sub
+
+#Region "tool strip menu items"
+    Private Sub QuitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitToolStripMenuItem1.Click
+        Application.Exit()
     End Sub
 
     Private Sub MoreFromWorkplace2SoftwareToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoreFromWorkplace2SoftwareToolStripMenuItem1.Click
@@ -152,7 +171,7 @@ Public Class Form1
                 PictureBox1.Visible = False
                 MessageBox.Show(
                     "too fast",
-                    "Oh shit!!"
+                    "Oh crap!!"
                 )
                 Application.Exit()
                 Exit Sub
@@ -165,6 +184,7 @@ Public Class Form1
         SpeedDialog.Dispose()
     End Sub
 
+#Region "rubber ball"
     Private Sub Timer2_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer2.Tick
         Dim angleRad As Single = Math.PI * (angle Mod 360) / 180
         Dim newx As Integer = Me.Location.X - Math.Sin(angleRad) * 10
@@ -192,6 +212,7 @@ Public Class Form1
         RubberBallToolStripMenuItem.Checked = My.Settings.Bouncing
         Timer2.Enabled = My.Settings.Bouncing
     End Sub
+#End Region
 
     Private Sub ShareMeWithFriendsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShareMeWithFriendsToolStripMenuItem.Click
         Dim res = MailDialog.ShowDialog()
@@ -249,13 +270,15 @@ Public Class Form1
         Next
     End Sub
 
-    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        Select Case e.KeyCode
-            Case Keys.F9
-                QuietModeF9ToolStripMenuItem.PerformClick()
-        End Select
+    Private Sub SingASongToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SingASongToolStripMenuItem.Click
+        ConquerToolStripMenuItem.PerformClick()
     End Sub
 
+    Private Sub TellAJokeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TellAJokeToolStripMenuItem.Click
+        JokeForm.Show()
+    End Sub
+
+#Region "let me help you"
     Private Sub TypeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TypeToolStripMenuItem.Click
         TypeDialog.Show()
     End Sub
@@ -263,9 +286,10 @@ Public Class Form1
     Private Sub ConquerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConquerToolStripMenuItem.Click
         Process.Start("https://youtu.be/0iI4ap-QA38")
     End Sub
+#End Region
 
-    Private Sub SuperDipChipToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SuperDipChipToolStripMenuItem.Click
-        Process.Start("cmd", "/c ""echo Launching game... & cd games\dipchip & start dipchip""")
+#Region "game launchers"
+    Private Sub DoCmdHack()
         ' Stupid hack if stupid cmd stupidly stays put, stupid!
         ' Known to happen at least once
         ' {Alt down}{Space}{Alt up}n
@@ -275,5 +299,52 @@ Public Class Form1
         keybd_event(12, 0, 2, 0)
         keybd_event(CByte(Keys.N), 0, 0, 0)
         keybd_event(CByte(Keys.N), 0, 2, 0)
+    End Sub
+
+    Private Sub SuperDipChipToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SuperDipChipToolStripMenuItem.Click
+        Process.Start("cmd", "/c ""echo Launching game... & cd games\dipchip & start dipchip""")
+        DoCmdHack()
+    End Sub
+
+    Private Sub Chip97ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Chip97ToolStripMenuItem.Click
+        If Not IO.Directory.Exists("games/chipgameninetyseven") Then
+            MessageBox.Show(
+                "Chip '97 has been compressed to save space and will be decompressed." & vbCrLf & vbCrLf & _
+                "Choose ""[Chip's install directory]/games/chipgameninetyseven"" as the folder to extract to " & _
+                "(this should be the default), then choose Play Games -> Chip '97 again.",
+                "Compression Advisory",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            )
+            Process.Start("cmd", "/c ""cd games & start cg97extract""")
+            DoCmdHack()
+            Exit Sub
+        End If
+
+        Dim res = MessageBox.Show(
+            "This game is intended for mature audiences only. To play, you must answer the following question:" & vbCrLf & vbCrLf & _
+            "Have you passed (or at least reached) pubescence?" & vbCrLf & _
+            "(Choose No if you don't know what that means.)",
+            "Mature Audiences Warning",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning
+        )
+        If res = DialogResult.No Then Exit Sub
+
+        Process.Start("cmd", "/c ""echo Lauching game... & cd games\chipgameninetyseven & start chipgameninetyseven""")
+        DoCmdHack()
+    End Sub
+
+    Private Sub ChipRacerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChipRacerToolStripMenuItem.Click
+        Process.Start("cmd", "/c ""echo Launching game... & cd games\racer & start racer""")
+        DoCmdHack()
+    End Sub
+
+#End Region
+#End Region
+
+    Private Sub RegisterForSaltnVinegarAccessToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegisterForSaltnVinegarAccessToolStripMenuItem.Click
+        Me.Hide()
+        RegisterNag.ShowDialog()
+        RegisterNag.Dispose()
+        Me.Show()
     End Sub
 End Class

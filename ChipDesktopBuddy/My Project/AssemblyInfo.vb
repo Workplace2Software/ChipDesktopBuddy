@@ -14,7 +14,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("This chip will keep you company on you're computer!")> 
 <Assembly: AssemblyCompany("Workplace2Software")> 
 <Assembly: AssemblyProduct("Chip Desktop Buddy")> 
-<Assembly: AssemblyCopyright("Copyright © Workplace2Software 2022.")> 
+<Assembly: AssemblyCopyright("Copyright © Workplace2Software 2023.")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.2.0.0")> 
-<Assembly: AssemblyFileVersion("1.2.0.0")> 
+<Assembly: AssemblyVersion("1.3.0.0")> 
+<Assembly: AssemblyFileVersion("1.3.0.0")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("")> 

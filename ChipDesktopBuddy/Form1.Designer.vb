@@ -29,19 +29,23 @@ Partial Class Form1
         Me.MoreFromWorkplace2SoftwareToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShareMeWithFriendsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckForUpdatesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.RegisterForSaltnVinegarAccessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TellAJokeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SingASongToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlayGamesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SuperDipChipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Chip97ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LetMeHelpYouToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConquerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GetFunkyToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChangeSpeedToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.StartWithMyComputerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlwaysOnTopToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RubberBallToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
-        Me.PlayGamesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SuperDipChipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LetMeHelpYouToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConquerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangeSpeedToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.QuietModeF9ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -59,18 +63,19 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ChipRacerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutChipDesktopBuddyToolStripMenuItem1, Me.MoreFromWorkplace2SoftwareToolStripMenuItem1, Me.ShareMeWithFriendsToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem1, Me.ToolStripSeparator4, Me.GetFunkyToolStripMenuItem1, Me.ChangeSpeedToolStripMenuItem1, Me.ToolStripSeparator5, Me.StartWithMyComputerToolStripMenuItem, Me.AlwaysOnTopToolStripMenuItem1, Me.RubberBallToolStripMenuItem, Me.ToolStripSeparator7, Me.PlayGamesToolStripMenuItem, Me.LetMeHelpYouToolStripMenuItem, Me.ToolStripSeparator6, Me.QuietModeF9ToolStripMenuItem, Me.HideToolStripMenuItem, Me.QuitToolStripMenuItem1})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutChipDesktopBuddyToolStripMenuItem1, Me.MoreFromWorkplace2SoftwareToolStripMenuItem1, Me.ShareMeWithFriendsToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem1, Me.ToolStripSeparator7, Me.RegisterForSaltnVinegarAccessToolStripMenuItem, Me.ToolStripSeparator4, Me.TellAJokeToolStripMenuItem, Me.SingASongToolStripMenuItem, Me.PlayGamesToolStripMenuItem, Me.LetMeHelpYouToolStripMenuItem, Me.GetFunkyToolStripMenuItem1, Me.ToolStripSeparator5, Me.StartWithMyComputerToolStripMenuItem, Me.AlwaysOnTopToolStripMenuItem1, Me.RubberBallToolStripMenuItem, Me.ChangeSpeedToolStripMenuItem1, Me.ToolStripSeparator6, Me.QuietModeF9ToolStripMenuItem, Me.HideToolStripMenuItem, Me.QuitToolStripMenuItem1})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(282, 358)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(282, 402)
         '
         'AboutChipDesktopBuddyToolStripMenuItem1
         '
@@ -96,22 +101,77 @@ Partial Class Form1
         Me.CheckForUpdatesToolStripMenuItem1.Size = New System.Drawing.Size(281, 22)
         Me.CheckForUpdatesToolStripMenuItem1.Text = "Check for updates"
         '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(278, 6)
+        '
+        'RegisterForSaltnVinegarAccessToolStripMenuItem
+        '
+        Me.RegisterForSaltnVinegarAccessToolStripMenuItem.Name = "RegisterForSaltnVinegarAccessToolStripMenuItem"
+        Me.RegisterForSaltnVinegarAccessToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.RegisterForSaltnVinegarAccessToolStripMenuItem.Text = "Salt 'n' Vinegar Member Access..."
+        '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(278, 6)
+        '
+        'TellAJokeToolStripMenuItem
+        '
+        Me.TellAJokeToolStripMenuItem.Name = "TellAJokeToolStripMenuItem"
+        Me.TellAJokeToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.TellAJokeToolStripMenuItem.Text = "Tell a Joke"
+        '
+        'SingASongToolStripMenuItem
+        '
+        Me.SingASongToolStripMenuItem.Name = "SingASongToolStripMenuItem"
+        Me.SingASongToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.SingASongToolStripMenuItem.Text = "Sing a Song"
+        '
+        'PlayGamesToolStripMenuItem
+        '
+        Me.PlayGamesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SuperDipChipToolStripMenuItem, Me.Chip97ToolStripMenuItem, Me.ChipRacerToolStripMenuItem})
+        Me.PlayGamesToolStripMenuItem.Name = "PlayGamesToolStripMenuItem"
+        Me.PlayGamesToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.PlayGamesToolStripMenuItem.Text = "Play Games"
+        '
+        'SuperDipChipToolStripMenuItem
+        '
+        Me.SuperDipChipToolStripMenuItem.Name = "SuperDipChipToolStripMenuItem"
+        Me.SuperDipChipToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SuperDipChipToolStripMenuItem.Text = "Super DipChip"
+        '
+        'Chip97ToolStripMenuItem
+        '
+        Me.Chip97ToolStripMenuItem.Name = "Chip97ToolStripMenuItem"
+        Me.Chip97ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Chip97ToolStripMenuItem.Text = "Chip '97"
+        '
+        'LetMeHelpYouToolStripMenuItem
+        '
+        Me.LetMeHelpYouToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConquerToolStripMenuItem, Me.TypeToolStripMenuItem})
+        Me.LetMeHelpYouToolStripMenuItem.Name = "LetMeHelpYouToolStripMenuItem"
+        Me.LetMeHelpYouToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
+        Me.LetMeHelpYouToolStripMenuItem.Text = "Let me Help You"
+        '
+        'ConquerToolStripMenuItem
+        '
+        Me.ConquerToolStripMenuItem.Name = "ConquerToolStripMenuItem"
+        Me.ConquerToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.ConquerToolStripMenuItem.Text = "Conquer..."
+        '
+        'TypeToolStripMenuItem
+        '
+        Me.TypeToolStripMenuItem.Name = "TypeToolStripMenuItem"
+        Me.TypeToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.TypeToolStripMenuItem.Text = "Type..."
         '
         'GetFunkyToolStripMenuItem1
         '
         Me.GetFunkyToolStripMenuItem1.Name = "GetFunkyToolStripMenuItem1"
         Me.GetFunkyToolStripMenuItem1.Size = New System.Drawing.Size(281, 22)
         Me.GetFunkyToolStripMenuItem1.Text = "Get Funky!"
-        '
-        'ChangeSpeedToolStripMenuItem1
-        '
-        Me.ChangeSpeedToolStripMenuItem1.Name = "ChangeSpeedToolStripMenuItem1"
-        Me.ChangeSpeedToolStripMenuItem1.Size = New System.Drawing.Size(281, 22)
-        Me.ChangeSpeedToolStripMenuItem1.Text = "Change Speed..."
         '
         'ToolStripSeparator5
         '
@@ -136,42 +196,11 @@ Partial Class Form1
         Me.RubberBallToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
         Me.RubberBallToolStripMenuItem.Text = "rubber ball"
         '
-        'ToolStripSeparator7
+        'ChangeSpeedToolStripMenuItem1
         '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(278, 6)
-        '
-        'PlayGamesToolStripMenuItem
-        '
-        Me.PlayGamesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SuperDipChipToolStripMenuItem})
-        Me.PlayGamesToolStripMenuItem.Name = "PlayGamesToolStripMenuItem"
-        Me.PlayGamesToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.PlayGamesToolStripMenuItem.Text = "Play Games"
-        '
-        'SuperDipChipToolStripMenuItem
-        '
-        Me.SuperDipChipToolStripMenuItem.Name = "SuperDipChipToolStripMenuItem"
-        Me.SuperDipChipToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.SuperDipChipToolStripMenuItem.Text = "Super DipChip"
-        '
-        'LetMeHelpYouToolStripMenuItem
-        '
-        Me.LetMeHelpYouToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConquerToolStripMenuItem, Me.TypeToolStripMenuItem})
-        Me.LetMeHelpYouToolStripMenuItem.Name = "LetMeHelpYouToolStripMenuItem"
-        Me.LetMeHelpYouToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.LetMeHelpYouToolStripMenuItem.Text = "Let me Help You"
-        '
-        'ConquerToolStripMenuItem
-        '
-        Me.ConquerToolStripMenuItem.Name = "ConquerToolStripMenuItem"
-        Me.ConquerToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
-        Me.ConquerToolStripMenuItem.Text = "Conquer..."
-        '
-        'TypeToolStripMenuItem
-        '
-        Me.TypeToolStripMenuItem.Name = "TypeToolStripMenuItem"
-        Me.TypeToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
-        Me.TypeToolStripMenuItem.Text = "Type..."
+        Me.ChangeSpeedToolStripMenuItem1.Name = "ChangeSpeedToolStripMenuItem1"
+        Me.ChangeSpeedToolStripMenuItem1.Size = New System.Drawing.Size(281, 22)
+        Me.ChangeSpeedToolStripMenuItem1.Text = "Change Speed..."
         '
         'ToolStripSeparator6
         '
@@ -267,6 +296,17 @@ Partial Class Form1
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(251, 22)
         Me.ToolStripMenuItem1.Text = "rubberball"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Location = New System.Drawing.Point(159, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(124, 101)
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
@@ -279,16 +319,11 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox2
+        'ChipRacerToolStripMenuItem
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(159, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(124, 101)
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
+        Me.ChipRacerToolStripMenuItem.Name = "ChipRacerToolStripMenuItem"
+        Me.ChipRacerToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ChipRacerToolStripMenuItem.Text = "Chip Racer"
         '
         'Form1
         '
@@ -305,8 +340,8 @@ Partial Class Form1
         Me.Text = "Chip Desktop Buddy"
         Me.TransparencyKey = System.Drawing.Color.Lime
         Me.ContextMenuStrip1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -340,12 +375,17 @@ Partial Class Form1
     Friend WithEvents StartWithMyComputerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents QuietModeF9ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents LetMeHelpYouToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TypeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConquerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents PlayGamesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SuperDipChipToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Chip97ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TellAJokeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SingASongToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents RegisterForSaltnVinegarAccessToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ChipRacerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -118,58 +118,94 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chipimg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chip.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="chip1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chip1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chip2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chip2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chip3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chip3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="chip4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chip4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chip5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chip5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chip6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chip6.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Chipe_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Chipe_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WARNING" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WARNING.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Car_pedals_20180814_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Car_pedals_20180814_small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chipimg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chip2_fixed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="W2SSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\W2SSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chipimg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chip3_fixedfixed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chipimg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chip4_fixedfixed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chip5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chip5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cough" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cough.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="WindowGlass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WindowGlass.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="phoneguy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phoneguy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chipenvelope" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chip_envelope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="skypecontrols" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skypecontrols.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\512px-Stand-up_comedy_-_Stage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WARNING" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WARNING.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowGlass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WindowGlass.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chipicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chipicon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cry3_micah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cry3-micah.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chipimg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chip4_fixedfixed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chip2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chip2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Car_pedals_20180814_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car_pedals_20180814_small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="phone_call_opt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone_call_opt.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chipimg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chip.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cough" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cough.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chip_minutes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chip-minutes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smiley" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smiley.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="chipkeyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chipkeyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phone_outbound_cut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone_outbound_cut.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chipimg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chip2_fixed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chip4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chip4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Chipe_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chipe_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tracked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tracked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chip6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chip6.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="endcall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\endcall.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
